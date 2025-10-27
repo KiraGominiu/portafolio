@@ -1,4 +1,4 @@
-/* RESET */
+
 * {
   margin: 0;
   padding: 0;
@@ -264,7 +264,7 @@ footer {
   background-clip: text;             /* estándar */
   -webkit-background-clip: text;     /* WebKit */
   color: transparent;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Courier', cursive;
   letter-spacing: 1px;
   text-align: center;
   font-weight: 700;
@@ -491,7 +491,7 @@ footer {
 /* ========================= */
 #contacto {
   padding: 70px 10%;
-  background: rgba(17, 24, 39, 0.8);
+  background: rgba(43, 58, 91, 0.8);
   border-radius: 20px;
   margin: 50px auto;
   max-width: 1000px;
