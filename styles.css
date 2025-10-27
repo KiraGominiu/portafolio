@@ -1,0 +1,653 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  background: #0d1b2a;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(20, 10, 40, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffb6f9;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ff8ce6;
+}
+
+/* HERO - AURORAS + ESTRELLAS */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 70px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at bottom, #0d1b2a, #000814);
+}
+
+.hero::before, 
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(ellipse at center, rgba(186, 85, 211, 0.35), transparent 70%),
+              radial-gradient(ellipse at center, rgba(135, 206, 250, 0.25), transparent 70%),
+              radial-gradient(ellipse at center, rgba(255, 182, 193, 0.3), transparent 70%);
+  background-blend-mode: screen;
+  animation: aurora 12s ease-in-out infinite alternate;
+  transform: rotate(25deg);
+  z-index: 0;
+}
+
+.hero::after {
+  animation-delay: 6s;
+  transform: rotate(-25deg);
+}
+
+/* Estrellas */
+.hero::before {
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 70% 80%, #fff, transparent),
+    radial-gradient(2px 2px at 40% 60%, #fff, transparent),
+    radial-gradient(1px 1px at 90% 20%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 10% 50%, #fff, transparent);
+}
+
+@keyframes aurora {
+  0% { transform: translate(-20%, -20%) rotate(25deg) scale(1); }
+  50% { transform: translate(20%, 20%) rotate(15deg) scale(1.2); }
+  100% { transform: translate(-20%, -10%) rotate(25deg) scale(1); }
+}
+
+/* HERO CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin: 15px 0;
+}
+
+.hero-content h1 span {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  background: linear-gradient(90deg, #ff8ce6, #c084fc, #93c5fd);
+  background-clip: text;            /* estándar */
+  -webkit-background-clip: text;    /* WebKit */
+  color: transparent;               /* fallback */
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.perfil {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
+}
+
+.btn {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #ff8ce6, #a78bfa);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(80, 59, 143, 0.4);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #a78bfa, #ff8ce6);
+  box-shadow: 0 6px 20px rgba(194, 15, 155, 0.5);
+}
+
+/* SECCIONES GENERALES */
+section {
+  padding: 80px 10%;
+  position: relative;
+  background: rgba(92, 67, 142, 0.7);
+}
+
+ section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  background: linear-gradient(90deg, #ff8ce6, #c084fc);
+
+  /* Compatibilidad y estándar */
+  background-clip: text;             /* estándar */
+  -webkit-background-clip: text;     /* WebKit */
+  color: transparent;                /* fallback */
+  -webkit-text-fill-color: transparent;
+}
+
+section p, section li {
+  font-size: 1.1rem;
+}
+
+/* LISTAS */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+ul li::before {
+  content: "✨";
+  position: absolute;
+  left: 0;
+}
+
+/* SKILLS */
+.skills-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.bar {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 12px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #ff8ce6, #a78bfa);
+  border-radius: 20px;
+}
+
+/* CONTACTO */
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.socials a {
+  padding: 10px 18px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+  font-size: 0.95rem;
+}
+
+.socials a:hover {
+  background: linear-gradient(135deg, #ff8ce6, #a78bfa);
+  box-shadow: 0 4px 12px rgba(255, 140, 230, 0.4);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 0.9rem;
+}
+
+
+/* ========================= */
+/* Título con degradado      */
+/* ========================= */
+#sobre-mi h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #ff8ce6, #c084fc, #93c5fd);
+  background-clip: text;             /* estándar */
+  -webkit-background-clip: text;     /* WebKit */
+  color: transparent;
+  font-family: 'Dancing Script', cursive;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+}
+
+/* Brillitos decorativos en el título */
+#sobre-mi h2::after {
+  content: " ✦ ✧ ✦ ";
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 10px;
+  animation: sparkleTitle 2.5s infinite ease-in-out alternate;
+}
+
+@keyframes sparkleTitle {
+  from { opacity: 0.4; transform: scale(0.9); }
+  to   { opacity: 1;   transform: scale(1.1); }
+}
+
+/* ========================= */
+/* SECCIÓN HABILIDADES       */
+/* ========================= */
+#habilidades {
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 200, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo animado estilo aurora */
+#habilidades::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center,
+    rgba(255, 140, 230, 0.5),
+    rgba(192, 132, 252, 0.4),
+    transparent 70%
+  );
+  animation: auroraMove 15s infinite linear;
+  z-index: 0;
+}
+
+@keyframes auroraMove {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(10%, -10%) rotate(180deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Contenedor de habilidades (texto por encima del fondo) */
+.skills {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cada barra de habilidad */
+.skill-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 20px 0;
+  padding: 15px 20px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(255, 140, 230, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.skill-bar:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Estrellitas flotantes */
+.skill-bar::before {
+  content: "✨ ✦ ✧";
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  animation: sparkle 2s infinite ease-in-out alternate;
+}
+
+@keyframes sparkle {
+  from { opacity: 0.4; transform: scale(0.9) rotate(-10deg); }
+  to   { opacity: 1;   transform: scale(1.1) rotate(10deg);  }
+}
+
+/* Texto dentro del recuadro */
+.skill-bar span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Barra de progreso */
+.progress {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress div {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff8ce6, #c084fc, #60a5fa);
+  background-size: 200% 100%;
+  animation: gradientMove 4s infinite alternate;
+}
+
+@keyframes gradientMove {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+
+/* Fondo animado estilo aurora */
+#habilidades::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center,
+    rgba(255, 140, 230, 0.5),
+    rgba(192, 132, 252, 0.4),
+    transparent 70%
+  );
+  animation: auroraMove 15s infinite linear;
+  z-index: 0;
+}
+
+@keyframes auroraMove {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(10%, -10%) rotate(180deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Contenedor de habilidades */
+.skills {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cada barra de habilidad */
+.skill-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 20px 0;
+  padding: 15px 20px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(255, 140, 230, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.skill-bar:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Estrellitas flotantes */
+.skill-bar::before {
+  content: "✨ ✦ ✧";
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  animation: sparkle 2s infinite ease-in-out alternate;
+}
+
+@keyframes sparkle {
+  from { opacity: 0.4; transform: scale(0.9) rotate(-10deg); }
+  to { opacity: 1; transform: scale(1.1) rotate(10deg); }
+}
+
+/* Texto dentro del recuadro */
+.skill-bar span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Barra de progreso */
+.progress {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress div {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff8ce6, #c084fc, #60a5fa);
+  background-size: 200% 100%;
+  animation: gradientMove 4s infinite alternate;
+}
+
+@keyframes gradientMove {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+
+/* ========================= */
+/* SECCIÓN CONTACTO          */
+/* ========================= */
+#contacto {
+  padding: 70px 10%;
+  background: rgba(17, 24, 39, 0.8);
+  border-radius: 20px;
+  margin: 50px auto;
+  max-width: 1000px;
+  box-shadow: 0 0 25px rgba(255, 140, 230, 0.3);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#contacto h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #93c5fd, #c084fc, #ff8ce6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#contacto p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #e5e7eb;
+}
+
+/* Botones de redes sociales */
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+.socials a {
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+}
+
+.socials a:hover {
+  background: linear-gradient(135deg, #ff8ce6, #a78bfa, #60a5fa);
+  box-shadow: 0 6px 20px rgba(255, 140, 230, 0.5);
+  transform: scale(1.05);
+}
+
+
+/* ========================= */
+/* SECCIÓN SOBRE MÍ          */
+/* ========================= */
+#sobre-mi {
+  padding: 80px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo estilo aurora */
+#sobre-mi::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center,
+    rgba(255, 140, 230, 0.35),
+    rgba(192, 132, 252, 0.25),
+    rgba(96, 165, 250, 0.25),
+    transparent 70%
+  );
+  animation: auroraSobreMi 20s infinite linear;
+  z-index: 0;
+}
+
+@keyframes auroraSobreMi {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-10%, 10%) rotate(180deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Contenido encima del fondo */
+#sobre-mi .content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  line-height: 1.8;
+  padding: 20px;
+}
+
+/* Título */
+#sobre-mi h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ff8ce6, #c084fc, #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  position: relative;
+}
+
+/* Decoración estrellitas en el título */
+#sobre-mi h2::after {
+  content: " ✦ ✧ ✦ ";
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 10px;
+  animation: sparkleTitle 2.5s infinite ease-in-out alternate;
+}
+
+@keyframes sparkleTitle {
+  from { opacity: 0.4; transform: scale(0.9); }
+  to   { opacity: 1;   transform: scale(1.1); }
+}
+
+/* Texto */
+#sobre-mi p {
+  font-size: 1.15rem;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 15px 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 140, 230, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#sobre-mi p:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Imagen de perfil (si tienes una) */
+#sobre-mi img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 25px rgba(192, 132, 252, 0.5);
+  transition: transform 0.3s ease;
+}
+
+#sobre-mi img:hover {
+  transform: scale(1.08) rotate(3deg);
+}
