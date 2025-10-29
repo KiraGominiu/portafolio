@@ -254,9 +254,9 @@ footer {
 }
 
 
-/* ========================= */
-/* Título con degradado      */
-/* ========================= */
+
+/* Título con degradado */
+
 #sobre-mi h2 {
   font-size: 2.5rem;
   margin-bottom: 25px;
@@ -285,9 +285,9 @@ footer {
   to   { opacity: 1;   transform: scale(1.1); }
 }
 
-/* ========================= */
-/* SECCIÓN HABILIDADES       */
-/* ========================= */
+
+/* SECCIÓN HABILIDADES */
+
 #habilidades {
   padding: 60px 20px;
   background: rgba(255, 255, 255, 0.05);
@@ -486,9 +486,9 @@ footer {
   to { background-position: 100% 50%; }
 }
 
-/* ========================= */
-/* SECCIÓN CONTACTO          */
-/* ========================= */
+
+/* SECCIÓN CONTACTO */
+
 #contacto {
   padding: 70px 10%;
   background: rgba(43, 58, 91, 0.8);
@@ -545,9 +545,9 @@ footer {
 }
 
 
-/* ========================= */
-/* SECCIÓN SOBRE MÍ          */
-/* ========================= */
+
+/* SECCIÓN SOBRE MÍ */
+
 #sobre-mi {
   padding: 80px 20px;
   background: rgba(255, 255, 255, 0.05);
@@ -637,7 +637,7 @@ footer {
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* Imagen de perfil (si tienes una) */
+/* Imagen de perfil */
 #sobre-mi img {
   width: 160px;
   height: 160px;
@@ -651,3 +651,4 @@ footer {
 #sobre-mi img:hover {
   transform: scale(1.08) rotate(3deg);
 }
+
